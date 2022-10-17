@@ -1,7 +1,7 @@
 from persona import Persona
 from deportista import Deportista
 
-class Futbolista (Persona, Deportista):
+class Futbolista(Persona, Deportista):
     listaFutbolistas = []
 
     def __init__(self, nombre,edad, altura, sexo, añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
@@ -12,6 +12,7 @@ class Futbolista (Persona, Deportista):
         self._piernaHabil = piernaHabil
         Futbolista.listaFutbolistas.append(self)
 
+#Getters and setters
 
     def getGolesMarcados(self):
         return self._golesMarcados
@@ -31,20 +32,18 @@ class Futbolista (Persona, Deportista):
     def setPiernaHabil(self, piernaHabil):
         self._piernaHabil = piernaHabil
 
+#Methods
+
     @classmethod
 
     def getListaFutbolista(clc):
         return clc.listaFutbolistas
 
-    @classmethod
    
     def setListaFutbolistas(clc, listaFutbolistas):
         clc.listaFutbolistas = listaFutbolistas
 
     def __str__(self):
-        return f"Mi nombre es {self.getNombre(self)} soy profesional en el deporte {self.getDeporte(self)} tengo {self.getEdad(self)} años de edad y llevo {self.añosPracticando(self)} años en el deporte"
-
-
-
+        return f"Mi nombre es {self.getNombre()} soy profesional en el deporte {self.getDeporte()} tengo {self.getEdad()} años de edad y llevo {self.añosPracticando()} años en el deporte"
 
 
