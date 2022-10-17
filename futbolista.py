@@ -3,18 +3,18 @@ from deportista import Deportista
 
 
 class Futbolista (Persona, Deportista):
-    listaFutbolistas = []
+    _listaFutbolistas = []
 
 #Constructor
 
     def __init__(self, nombre, edad, altura, sexo, añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
 
         Persona.__init__(self, nombre, edad, altura, sexo)
-        Deportista.__init__(self, "Futbol",añosPracticando)
+        Deportista.__init__(self, "Futbol", añosPracticando)
         self._golesMarcados = golesMarcados
         self._tarjetasRojas = tarjetasRojas
         self._piernaHabil = piernaHabil
-        Futbolista.listaFutbolistas.append(self)
+        self._listaFutbolistas.append(self)
 
 #Getters and setters
 
@@ -36,6 +36,13 @@ class Futbolista (Persona, Deportista):
     def setPiernaHabil(self, piernaHabil):
         self._piernaHabil = piernaHabil
 
-    def __str__(self):
-        return "Mi nombre es " + self._nombre + " soy profesional en el deporte " + self._deporte + " Tengo " + str(self._edad) + " años de edad y llevo " + str(self._añosPracticando) + " años en el deporte"
+    @classmethod
+    def getListaFutbolistas(cls):
+        return cls._listaFutbolistas
 
+    @classmethod
+    def setListaFutbolistas(cls):
+        cls._listaFutbolistas = listaFutbolistas
+
+    def __str__(self):
+       return "Mi nombre es "+self._nombre+" soy profesional en el deporte "+self._deporte+" Tengo "+str(self._edad)+" años de edad y llevo "+str(self._añosPracticando)+" años en el deporte"

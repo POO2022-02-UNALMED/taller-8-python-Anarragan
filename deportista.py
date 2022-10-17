@@ -1,8 +1,8 @@
 class Deportista():
 
 #Constructors 
-    def __init__(self, añosPracticando):
-        self._deporte = "Futbol"
+    def __init__(self, deporte, añosPracticando):
+        self._deporte = deporte
         self._aniosPracticando = añosPracticando
 
 
