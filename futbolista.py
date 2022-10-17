@@ -1,14 +1,16 @@
 from persona import Persona
 from deportista import Deportista
 
-class Futbolista(Persona, Deportista):
+
+class Futbolista (Persona, Deportista):
     listaFutbolistas = []
 
 #Constructor
 
-    def __init__(self, nombre,edad, altura, sexo, añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
+    def __init__(self, nombre, edad, altura, sexo, añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
+
         Persona.__init__(self, nombre, edad, altura, sexo)
-        Deportista.__init__(self, añosPracticando)
+        Deportista.__init__(self, "Futbol",añosPracticando)
         self._golesMarcados = golesMarcados
         self._tarjetasRojas = tarjetasRojas
         self._piernaHabil = piernaHabil
@@ -21,26 +23,19 @@ class Futbolista(Persona, Deportista):
 
     def setGolesMarcados(self, golesMarcados):
         self._golesMarcados = golesMarcados
-
+    
     def getTarjetasRojas(self):
         return self._tarjetasRojas
 
     def setTarjetasRojas(self, tarjetasRojas):
         self._tarjetasRojas = tarjetasRojas
-
+    
     def getPiernaHabil(self):
         return self._piernaHabil
-
+    
     def setPiernaHabil(self, piernaHabil):
         self._piernaHabil = piernaHabil
 
-    def getListaFutbolista(self):
-        return self.listaFutbolistas
-
-    def setListaFutbolistas(self, listaFutbolistas):
-        self.listaFutbolistas = listaFutbolistas
-
     def __str__(self):
-        return f"Mi nombre es {self.getNombre()} soy profesional en el deporte {self.getDeporte()} tengo {self.getEdad()} años de edad y llevo {self.añosPracticando()} años en el deporte"
-
+        return "Mi nombre es " + self._nombre + " soy profesional en el deporte " + self._deporte + " Tengo " + str(self._edad) + " años de edad y llevo " + str(self._añosPracticando) + " años en el deporte"
 
