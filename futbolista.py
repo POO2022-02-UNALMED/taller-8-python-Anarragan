@@ -42,7 +42,7 @@ class Futbolista (Persona, Deportista):
         clc.listaFutbolistas = listaFutbolistas
 
     def __str__(self):
-        return f"Mi nombre es {self.getNombre()} soy profesional en el deporte {self.getDeporte()} tengo {self.getEdad()} años de edad y llevo {self.añosPracticando()} años en el deporte"
+        return f"Mi nombre es {self.getNombre(self)} soy profesional en el deporte {self.getDeporte(self)} tengo {self.getEdad(self)} años de edad y llevo {self.añosPracticando(self)} años en el deporte"
 
 
 
