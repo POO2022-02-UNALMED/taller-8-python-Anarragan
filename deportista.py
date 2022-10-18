@@ -1,9 +1,9 @@
 class Deportista():
 
 #Constructors 
-    def __init__(self, deporte, añosPracticando):
+    def __init__(self, deporte, años):
         self._deporte = deporte
-        self._aniosPracticando = añosPracticando
+        self._añosPracticando = años
 
 
 #Getters and setters
@@ -11,14 +11,14 @@ class Deportista():
     def getDeporte(self):
         return self._deporte
     
-    def setDeporte(self, deporte):
-        self._deporte = deporte
+    def setDeporte(self, j):
+        self._deporte = j
 
     def getAñosPracticando (self):
-        return self.añosPracticando
+        return self._añosPracticando
 
-    def setAñosPracticando(self, añosPracticando):
-        self.añosPracticando = añosPracticando
+    def setAñosPracticando(self, j):
+        self._añosPracticando
 
 
 

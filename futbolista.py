@@ -1,48 +1,48 @@
-from persona import Persona
 from deportista import Deportista
+from persona import Persona
 
-
-class Futbolista (Persona, Deportista):
+class Futbolista(Persona, Deportista):
     _listaFutbolistas = []
 
 #Constructor
 
-    def __init__(self, nombre, edad, altura, sexo, añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
+    def __init__(self, nombre, edad, altura, sexo, años, goles, tarjetas, habil):
+        Persona.__init__(self,nombre, edad, altura, sexo)
+        Deportista.__init__(self,'Futbol',años)
+        self._golesMarcados = goles
+        self._tarjetasRojas = tarjetas
+        self._piernaHabil = habil
+        Futbolista._listaFutbolistas.append(self)
 
-        Persona.__init__(self, nombre, edad, altura, sexo)
-        Deportista.__init__(self, "Futbol", añosPracticando)
-        self._golesMarcados = golesMarcados
-        self._tarjetasRojas = tarjetasRojas
-        self._piernaHabil = piernaHabil
-        self._listaFutbolistas.append(self)
 
-#Getters and setters
+#Getters
 
     def getGolesMarcados(self):
         return self._golesMarcados
 
-    def setGolesMarcados(self, golesMarcados):
-        self._golesMarcados = golesMarcados
-    
     def getTarjetasRojas(self):
         return self._tarjetasRojas
 
-    def setTarjetasRojas(self, tarjetasRojas):
-        self._tarjetasRojas = tarjetasRojas
-    
     def getPiernaHabil(self):
         return self._piernaHabil
-    
-    def setPiernaHabil(self, piernaHabil):
-        self._piernaHabil = piernaHabil
 
     @classmethod
-    def getListaFutbolistas(cls):
+    def getListaFutolistas(cls):
         return cls._listaFutbolistas
 
-    @classmethod
-    def setListaFutbolistas(cls):
-        cls._listaFutbolistas = listaFutbolistas
+    
+#Setters
+
+    def setGolesMarcados(self, j):
+        self._golesMarcados = j
+
+    def setTarjetasRojas(self, j):
+        self._tarjetasRojas = j
+
+    def setPiernaHabil(self, j):
+        self._piernaHabil = j
+
 
     def __str__(self):
-       return "Mi nombre es "+self._nombre+" soy profesional en el deporte "+self._deporte+" Tengo "+str(self._edad)+" años de edad y llevo "+str(self._añosPracticando)+" años en el deporte"
+        return f'Mi nombre es {self.getNombre()} soy profesional en el deporte {self.getDeporte()} Tengo {self.getEdad()} años de edad y llevo {self.getAñosPracticando()} años en el deporte'
+
